@@ -34,6 +34,9 @@ RUN apt install -y php-pear php7.3-dev
 # Prestissimo is a spiffing plugin for Composer which parallelises all the downloads. You just have to install it to see sometimes large speed increases — no configuration is needed.
 RUN composer global require hirak/prestissimo
 
+# Install xdebug
+RUN pecl install -f xdebug
+
 # Create a vhost with h2 poiting to /var/www/public
 COPY ["server/000-default.conf", "/etc/apache2/sites-available/000-default.conf"]
 
