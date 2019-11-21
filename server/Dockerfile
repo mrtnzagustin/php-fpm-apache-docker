@@ -27,6 +27,9 @@ RUN a2enconf php7.3-fpm
 # Install some basic libs, composer and supervisor
 RUN DEBIAN_FRONTEND=noninteractive apt install -y php7.3-mysql php7.3-xml php7.3-curl php7.3-zip php7.3-mbstring composer supervisor
 
+# Install libraries to allow pecl installs
+RUN apt install -y php-pear php7.3-dev
+
 # Install presentissimo for paralelism in package downloads
 # Prestissimo is a spiffing plugin for Composer which parallelises all the downloads. You just have to install it to see sometimes large speed increases — no configuration is needed.
 RUN composer global require hirak/prestissimo
