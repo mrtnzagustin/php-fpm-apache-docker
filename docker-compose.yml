@@ -5,6 +5,6 @@ services:
     build: 
       context: ./
       dockerfile: ./server/Dockerfile
-    image: mrtnzagustin/apache-phpfpm:7.3
+    image: mrtnzagustin/apache-phpfpm:7.3-ubuntu
     ports:
       - "80:80"
