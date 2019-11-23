@@ -8,14 +8,14 @@ https://hub.docker.com/repository/docker/mrtnzagustin/apache-phpfpm
 ```yaml
 services:  
   server:
-    image: mrtnzagustin/apache-phpfpm:7.3        
+    image: mrtnzagustin/apache-phpfpm:7.3-ubuntu        
     ports:      
       - "8282:80" 
 ```
 ## Basic Override
 ### With Dockerfile
 ```Dockerfile
-FROM mrtnzagustin/apache-phpfpm:7.3
+FROM mrtnzagustin/apache-phpfpm:7.3-ubuntu
 # Do some stuff -> copy files, install depedencies, install other packages, enable xdebug, etc
 # Restart services
 RUN service php7.3-fpm restart
